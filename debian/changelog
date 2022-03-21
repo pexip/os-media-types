@@ -1,3 +1,9 @@
+media-types (4.0.0pexip1) pexip; urgency=medium
+
+  * Prepare Pexip packaging
+
+ -- Huw Jones <huw@pexip.com>  Mon, 21 Mar 2022 17:29:46 +0000
+
 media-types (4.0.0) unstable; urgency=medium
 
   Remove redundant types or file extensions; document them in README.md
