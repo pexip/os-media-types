@@ -1,3 +1,9 @@
+media-types (4.0.0pexip2) pexip-bullseye; urgency=medium
+
+  * Rebuild for bullseye.
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Wed, 20 Jul 2022 17:24:32 +0100
+
 media-types (4.0.0pexip1) pexip; urgency=medium
 
   * Prepare Pexip packaging
