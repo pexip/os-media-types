@@ -1,3 +1,247 @@
+media-types (10.0.0) unstable; urgency=medium
+
+  Typse changed:
+  
+  fc1dbd3 Removed `aml` extension in `application/automationml-aml+xml`
+          (redundant).  Thanks to Glenn Strauss (Closes: #1031068)
+
+  Types added:
+
+  44e3270 application/vnd.eln+zip (file ext. ELN)
+  0661e4e application/vnd.gpxsee.map+xml
+
+ -- Charles Plessy <plessy@debian.org>  Sat, 11 Feb 2023 22:46:09 +0900
+
+media-types (9.0.0) unstable; urgency=medium
+
+  Types changed:
+
+  25ede06 application/vnd.oasis.opendocument.database renamed
+          application/vnd.oasis.opendocument.base.
+  5e05a28 chemical/x-mol2 replaced with application/vnd.sybyl.mol2
+  96ba60b Move apng suffix from image/vnd.mozilla.apng (deprecated)
+          to image/apng (new)
+  ee6d877 application/vnd.gentics.grd+json: add file extension grd
+
+  Types removed:
+
+  f39a636 Removed video/dl, conlfict for file ext .dl with a/vnd.datalog
+  33f1b86 Remove obsolete type application/remote-printing
+  6e4c8cc Remove application/vnd.wordperfect5.1 (file ext. wp5),
+          not regisered at the IANA
+
+  Types added:
+
+  0310ebf application/apexlang (file exts apex, apexlang).
+  bd7ea5f application/automationml-aml+xml and application/automationml-amlx+zip
+  a57abd9 application/concise-problem-details+cbor (no file extension)
+  c1b61c2 application/cose-x509
+  8f5ed9b application/EmergencyCallData.LegacyESN+json
+  5a9d10d application/logout+jwt
+  ed68c0c application/rpki-checklist, did not associate it to file ext. sig.
+  7ae76d0 application/swid+cbor (file extension: coswid).
+  a4a9f59 application/tm+json (extensions tm.jsonl, tm.json or jsontm)
+  95ecec7 application/vnd.3gpp-prose-pc3a+xml,
+          application/vnd.3gpp-prose-pc3ach+xml,
+          application/vnd.3gpp-prose-pc8+xml
+  894dafd application/vnd.belightsoft.lhzl+zip (extension lhzl)
+  d1bfd67 application/vnd.cncf.helm.chart.content.v1.tar+gzip (no file ext)
+  7b1eab9 application/vnd.cncf.helm.chart.provenance.v1.prov
+  60b329a application/vnd.datalog (file extension .dl)
+  3101b7a application/vnd.gentoo.manifest
+  48baea4 application/vnd.gentoo.catmetadata+xml
+          application/vnd.gentoo.ebuild (ebuild),
+          application/vnd.gentoo.eclass (eclass)
+          application/vnd.gentoo.gpkg (gpkg.tar)
+          application/vnd.gentoo.xpak (xpak)
+          application/vnd.gentoo.pkgmetadata+xml
+  e58b95e application/vnd.ipld.dag-cbor, application/vnd.ipld.dag-json
+  ef32b7f application/vnd.medicalholodeck.recordxr (ext: rxt)
+  3e875a5 application/vnd.wasmflow.wafl (file ext. wafl)
+  5b728a0 application/vnd.wordlift
+  810d7f6 message/bhttp (RFC 9292)
+  e132b7b model/JT (file ext. jt)
+  49b3563 model/vnd.cld (ext: cld)
+  5f3a948 model/vnd.usda (file ext. usda)
+  874b906 text/hl7v2 (no file extension)
+  68c1778 text/vnd.exchangeable (file ext. VFK)
+  aed967c text/wgsl (ext. wgsl)
+  c161d8d video/H266
+  860be7e image/dpx (ext. dpx)
+  6883baf image/webp (file ext. webp) (Closes: #971011)
+
+ -- Charles Plessy <plessy@debian.org>  Sun, 29 Jan 2023 08:38:59 +0900
+
+media-types (8.0.0) unstable; urgency=medium
+
+  Types changed:
+
+  a5d04b1 Removed application/vnd.fdf, recently replaced by application/fdf.
+  496de8b Removed application/vnd.hl7cda+xml and application/vnd.hl7v2+xml
+          and added application/hl7v2+xml and application/cda+xml
+  d5f4a66 Replaced application/vnd.adobe.xfdf with application/xfdf.
+
+  Types added:
+
+  c80e84b Added application/yang-data+cbor.
+  37887a7 Added application/vnd.belightsoft.lhzd+zip (extension lhzd).
+  f70436a Added application/cwl and application/cwl+json
+          (exts: cwl and cwl.json).
+  493c677 Added application/linkset and application/linkset+json.
+
+ -- Charles Plessy <plessy@debian.org>  Sun, 15 May 2022 14:03:54 +0900
+
+media-types (7.1.0) unstable; urgency=medium
+
+  Types added:
+
+  6e5985b Added application/aif+cbor and application/aif+json.
+  1d1d62c Added application/ace+json.
+  460c575 Added application/fdf for the Forms Data Format (extension fdf).
+  a920822 Added application/vnd.genozip (extension genozip).
+  f057a2c Added application/vnd.3gpp.mcdata-msgstore-ctrl-request+xml and
+          application/vnd.3gpp.mcdata-regroup+xml
+  0980fa9 Added application/vnd.ipld.car (extension car).
+          and application/vnd.ipld.raw.
+  d798063 Added application/vnd.onvif.metadata.
+
+  Changes reverted:
+
+  3b37fef Added back application/x-pki-message, application/x-x509-ca-ra-cert
+                and application/x-x509-next-ca-cert.
+  cfe09c2 Added back application/x-www-form-urlencoded.
+
+ -- Charles Plessy <plessy@debian.org>  Sat, 09 Apr 2022 17:50:20 +0900
+
+media-types (7.0.0) unstable; urgency=medium
+
+  Types changed:
+
+  c25a2ac Add model/prc and give it the prc suffix from application/vnd.palm
+  f67681a Replace application/javascript and application/ecmascript
+          with text/javascript as per draft-ietf-dispatch-javascript-mjs-17,
+          which is already applied by the IANA.
+
+ -- Charles Plessy <plessy@debian.org>  Mon, 21 Mar 2022 18:18:18 +0900
+
+media-types (6.0.0) unstable; urgency=medium
+
+  Types changed:
+
+  acf2032 Added the unregistered extension `m4a` to `audio/mp4` and removed
+          it from `audio/mpeg`.  Thanks to Anders Kaseorg (Closes: #1004985)
+
+  Types added:
+
+  5b15f34 application/vnd.eclipse.ditto+json
+          application/vnd.maxar.archive.3tz+zip
+  714dff2 application/oblivious-dns-message and model/u3d
+  6d5aece application/alto-cdni+json, application/alto-cdnifilter+json,
+          application/alto-propmap+json, application/alto-propmapparams+json
+  871a291 application/vnd.gnu.taler.exchange+json,
+          application/vnd.gnu.taler.merchant+json
+
+ -- Charles Plessy <plessy@debian.org>  Sun, 06 Mar 2022 10:55:59 +0900
+
+media-types (5.0.0) unstable; urgency=medium
+
+  Types changed:
+
+  26cc8f9 Change GIMP's application/x-xcf to image/x-xcf.
+          Thanks to Joel Hockey (Closes: #991158)
+  956d82e Uppercased audio/QCELP as in the IANA documents.
+  72781ac Uppercased text/SGML and application/SGML as in IANA.
+  bfc437b Uppercased application/IOTP, application/ISUP, application/QSIG.
+  39cbba4 Uppercased application/CALS-1840, a/EDI-consent and a/ODA.
+  723e182 Corrected application/vq-rtcp-xr to application/vq-rtcpxr.
+  c9818e3 Corrected 'ense' to 'ence' in a/vnd.piaccess.application-licence.
+  dbc72aa Corrected '-' to '.' in application/vnd.efi.img and a/vnd.efi.iso.
+  091fe07 Corrected model/x3d+vrml to model/x3d-vrml.
+  6ddcb9e Remove non-registered ('*/x-*') types with no file extension:
+          application/x-core, application/x-executable,
+          application/x-java-applet, application/x-java-bean,
+          application/x-kdelnk, application/x-pki-message, application/x-rx,
+          application/x-shellscript, application/x-videolan,
+          application/x-www-form-urlencoded, application/x-x509-ca-ra-cert,
+          application/x-x509-next-ca-cert, audio/x-pn-realaudio-plugin,
+          image/x-icon, text/x-makefile, text/x-server-parsed-html
+  6834f86 Removed text/x-crontab (no file extension).
+  20ef945 Removed x-world/x-vrml, gave vrm extension to model/xml,
+          added x3dz extension to model/x3d+xml
+  47a46bc Removed obsolete and unregistered x-epoc/x-sisx-app (ext: sisx)
+  8b518ce Removed obsolete undeclared type x-conference/x-cooltalk (ext: ice)
+  0ce50aa Remove unregistered application types that extensions:
+          application/cap+xml, application/docbook+xml, application/ghostview
+          application/ms-tnef, application/news-message-id,
+          application/vnd.tve-trigger
+  dca94fb Remove text types with no extension or no apparent use.
+          text/english, text/h323, text/iuls, text/richtext, text/scriptlet,
+          text/vnd.flatland.3dml
+  dadf927 Remove unregistered extensionless video/vnd.mts.
+  4473324 Removed application/x-ms-manifest: (ext: manifest).
+  fb4ad41 Removed application/x-ms-application (ext: application).
+  319889b Remvoved extension from image/t38.
+  8cb03f0 Added file extension smf to application/vnd.stardivision.math
+
+  Types added:
+
+  943d860 Added image/jxl (Closes: #987395).
+  fbee352 Added image/avif
+  74d5493 Added audio/scip
+  7d98212 Added video/AV1, video/FFV1, video/jxsv, video/scip and video/VP9
+  1289cba Added text/fhirpath, text/cql-extension, text/cql-identifier, text/cql
+  ecfeac2 Added text/gff3 and text/shaclc
+  063d184 Added text/spdx and application/spdx+json
+  b0eb56e Added text/shex, text/vnd.familysearch.gedcom, text/vnd.hans
+  eb47d5e Added application/elm+json and application/elm+xml
+  ff44383 Added application/vnd.veritone.aion+json and application/vnd.wfa.dpp
+  81f79f9 Added application/vnd.sycle+xml and application/vnd.syft+json
+  b5ec7a2 Added application/vnd.resilient.logic and application/vnd.seis+json
+  5dcf147 Added application/vnd.opentimestamps.ots
+  06c9422 Added application/vnd.nebumind.line and application/vnd.oma.lwm2m+cbor
+  182621c Added application/vnd.las, application/mipc and application/sipc
+  60f54a2 Added application/vnd.nacamar.ybrid+json
+  5cb2a4a Added application/vnd.hl7v2+xml and application/vnd.hl7cda+xml
+  7526702 Added application/vnd.geogebra.slides
+  09f65bc Added application/vnd.fujifilm.fb.docuworks,
+          application/vnd.fujifilm.fb.docuworks.binder
+          application/vnd.fujifilm.fb.docuworks.container
+          application/vnd.fujifilm.fb.jfi+xml
+  d16a2e2 Added application/vnd.familysearch.gedcom+zip
+  8f6b0ff Added application/vnd.eu.kasparian.car+json
+  a5f5fba Added application/vnd.d3m-dataset and application/vnd.d3m-problem
+  597488a Added application/vnd.cyclonedx+json and application/vnd.cyclonedx+xml
+  8f81fab Added a/vnd.cryptomator.encrypted and a/vnd.cryptomator.vault
+  51f1b9a Added application/vnd.apache.arrow.file and a/vnd.apache.arrow.file
+  019548b Added application/vnd.afpc.cmoca-cmresource and application/vnd.age
+  d76426c Added application/3gppHal+json, a/3gppHalForms+json, a/vnd.3gpp.5gnas
+          a/vnd.3gpp.gtpc, a/vnd.3gpp.interworking-data, a/vnd.3gpp.lpp,
+          a/vnd.3gpp.mcdata-payload, a/vnd.3gpp.mcdata-service-config+xml,
+          a/vnd.3gpp.ngap, a/vnd.3gpp.pfcp, a/vnd.3gpp.s1ap
+  8fa36b5 Added application/token-introspection+jwt and a/oauth-authz-req+jwt
+  786a184 Added application/sarif-external-properties+json a/sarif+json
+  e67ffcd Added application/prs.cyn
+  b128636 Added application/opc-nodeset+xml
+  53bbc91 Added application/missing-blocks+cbor-seq
+  f2b0f17 Added application/manifest+json
+  d7ea565 Added application/jscalendar+json
+  a200fce Added application/example and multipart/example
+  ab41bc3 Added application/EmergencyCallData.cap+xml
+  453d139 Added application/dash-patch+xml
+  3bec167 Added application/clr
+  177c6cc Added application/city+json
+  88cd048 Added application/captive+json
+  ca0176f Added application/at+jwt
+  1d96815 Added application/ace+cbor
+  99e1fdb Added application/express, a/p21, a/p21+zip,
+          model/step, m/step+xml, m/step+zip, m/step-xml+zip
+  73099d3 Added model/vnd.sap.vds
+  841728d Added model/e57.
+  e1f3159 Added model/vnd.pytha.pyox with only pyox file extensio because
+          pyo is used by Python.
+
+ -- Charles Plessy <plessy@debian.org>  Sun, 23 Jan 2022 18:34:58 +0900
+
 media-types (4.0.0) unstable; urgency=medium
 
   Remove redundant types or file extensions; document them in README.md
