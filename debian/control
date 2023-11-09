@@ -9,7 +9,7 @@ Standards-Version: 4.5.0
 Rules-Requires-Root: no
 Vcs-Browser: https://salsa.debian.org/debian/media-types
 Vcs-Git: https://salsa.debian.org/debian/media-types.git
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ bullseye
+XS-Pexip-Upstream: http://deb.debian.org/debian/ bookworm
 
 Package: media-types
 Architecture: all
