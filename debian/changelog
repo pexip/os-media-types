@@ -1,3 +1,206 @@
+media-types (13.0.0) unstable; urgency=medium
+
+  297e5bc Add autopkgtest against new duplicates. Thanks, Tim Andersson
+
+  Types removed (extension if any):
+
+  cb0ff16 application/mac-compactpro (cpt)
+  5566a9c image/x-jg type (art)
+  0e6a959 video/x-matroska (mpv, mkv)
+
+  Types changed:  
+
+  bf2b60b audio/prs.sid: removed sid extension
+  072a1e6 application/x-qgis: removed shp and shx extensions
+  4a430d5 Corrected truncated application/vnd.c3voc.schedule+xml
+
+  Types added (extension):
+
+  bf2b60b application/yang-sid+json (sid)
+  0e6a959 audio/matroska (mka)
+          video/matroska (mkv)
+          video/matroska-3d (mk3d)
+  6ddb5f3 audio/midi-clip (midi2)
+  c1acf98 image/vnd.clip (clip)
+  a08521b image/jaii (jaii)
+          image/jais (jais)
+  954ccf4 text/vnd.zoo.kcl (kcl)
+  e16182b video/lottie+json (lot)
+  3edd452 video/vnd.planar (yuv)
+
+  Types added (no extension)
+
+  4c0d184 text/vnd.vcf
+  f608d41 application/coap-eap
+  33d8e0b video/evc
+  541023a text/richtext.
+
+ -- Charles Plessy <plessy@debian.org>  Sat, 08 Mar 2025 10:12:37 +0900
+
+media-types (12.0.0) unstable; urgency=medium
+
+  Types changed:
+
+  8f53c55 application/geopose+json: removed geojson extension.
+          Thanks, Tim Andersson, Glenn Strauss. Closes: #1095773
+  21ae59f application/vnd.fdsn.mseed: removed mseed added add mseed3.
+  1f1d4f9 application/vnd.laszip: added laz extension.
+
+  Types added (extension):
+
+  a1c282a application/prs.vcfbzip2 (vcf.bz2 vcfbzip2 vcfbz2)
+  c6948e1 application/rpki-signed-tal (tak)
+  d9c9715 application/toml (toml)
+  4b32154 application/uccs+cbor (uccs)
+          application/ujcs+json (ujcs)
+  4e5ab34 application/vnd.apache.parquet (parquet)
+  521c046 application/vnd.bzip3 (bz3)
+  311900c application/vnd.dcmp+xml (dcmp)
+  e322293 application/vnd.erofs (erofs, 0fs)
+  6c27166 application/vnd.geogebra.pinboard (ggp)
+  774a2b1 application/vnd.kdl (kdl)
+  625cf3e application/vnd.mermaid (mermaid)
+  c1ec3a4 application/vnd.openvpi.dspx+json (dspx)
+  660cf59 application/vnd.relpipe (rp)
+  bc8ab54 application/vnd.sketchometry (sketcho, sketch)
+  6869c68 application/vnd.vocalshaper.vsp4 (vsp4)
+  bfef835 application/vnd.xarin.cpj (cpj)
+  7e51eb8 application/vnd.xecrets-encrypted (axx)
+  4ff2f13 application/voucher-jws+json (vjj)
+  d049da1 application/vc (vc)
+          application/vp (vp)
+  a3d3c45 application/vnd.keyman.kmp+zip (kmp)
+          application/vnd.keyman.kmx (kmx)
+  92995a8 application/vnd.nato.bindingdataobject+cbor (bdob)
+          application/vnd.nato.bindingdataobject+json (bdoj)
+          application/vnd.nato.bindingdataobject+xml (bdo)
+          application/vnd.nato.openxmlformats-package.iepd+zip (iepd)
+
+  Types added (no extension):
+
+  e801731 application/prs.mayfile
+  6707644 application/sslkeylogfile
+  126ea0d application/ST2110-41
+  ee68f73 application/stratum
+  f2f5a6c application/toc+cbor
+  d049da1 application/vc+cose
+          application/vc+jwt
+          application/vp+cose
+          application/vp+jwt
+  0fec0f4 application/vnd.3gpp.5gsa2x
+          application/vnd.3gpp.5gsa2x-local-service-information
+          application/vnd.3gpp.5gsv2x
+          application/vnd.3gpp.5gsv2x-local-service-information
+  ed6ea05 application/vnd.3gpp.pinapp-info+xml
+  13ccbee application/vnd.acm.chatbot+json
+  6de674c application/vnd.c3voc
+  7dc6144 application/vnd.fdsn.stationxml+xml
+  3db5d25 application/vnd.ga4gh.passport+jwt
+  1c78e60 application/vnd.ldev.productlicensing
+  181bac2 application/vnd.msgpack
+  854aae6 application/vnd.oai.workflows
+          application/vnd.oai.workflows+json
+          application/vnd.oai.workflows+yaml
+  b3198e2 application/vnd.uic.osdm+json
+  ed6ea08 application/vnd.veraison.tsm-report+cbor
+          application/vnd.veraison.tsm-report+json
+
+ -- Charles Plessy <plessy@debian.org>  Sat, 22 Feb 2025 10:12:00 +0900
+
+media-types (11.0.0) unstable; urgency=medium
+
+  Types changed:
+
+  a524ef0 text/javascript: change file extension order to
+          js, mjs, es (Closes: #1061477)
+
+  Types added (extension):
+
+  f5ef967 application/c2pa (c2pa)
+  9f0e812 application/cwl+yaml (cwl.yaml)
+  b309a23 application/geopose+json (geojson)
+
+  Types added (no extension):
+
+  84126c3 application/ace-groupcomm+cbor
+          application/ace-trl+cbor
+  d0dd817 application/alto-tips+json
+          application/alto-tipsparams+json
+  d47873d application/bufr
+  64f6ce0 application/ce+cbor
+  961a514 application/cid-edhoc+cbor-seq
+          application/edhoc+cbor-seq
+  7a195bd application/city+json-seq
+  bfe9d8f application/eat+cwt
+          application/eat+jwt
+          application/eat-bun+cbor
+          application/eat-bun+json
+          application/eat-ucs+cbor
+          application/eat-ucs+json
+  4e52408 application/entity-statement+jwt
+          application/jwk-set+jwt
+          application/resolve-response+jwt
+          application/trust-chain+json
+          application/trust-mark+jwt
+          application/trust-mark-delegation+jwt
+  b309a23 application/geoxacml+json
+  28771b4 application/gnap-binding-jws
+          application/gnap-binding-jwsd
+          application/gnap-binding-rotation-jws
+          application/gnap-binding-rotation-jwsd
+  4ef5641 application/grib
+  ed97ad8 application/jscontact+json
+  dd0f8e1 application/jsonpath
+  3066dcd application/private-token-issuer-directory
+          application/private-token-request
+          application/private-token-response
+  706036d application/provided-claims+jwt
+  8af860d application/prs.implied-object+json
+          application/prs.implied-object+json-seq
+          application/prs.implied-object+yaml
+
+ -- Charles Plessy <plessy@debian.org>  Thu, 06 Feb 2025 22:21:25 +0900
+
+media-types (10.1.0) unstable; urgency=medium
+
+  Types added:
+  
+  c8b34f6 application/dpop+jwt
+  2ba17f7 application/ohttp-keys
+  0ef31f9 application/vnd.3gpp.seal-info+xml, a/vnd.3gpp.seal-location-info+xml
+  c55af96 application/vnd.3gpp.vae-info+xml
+  a5497d6 application/vnd.3gpp.current-location-discovery+xml,
+          application/vnd.3gpp.mcptt-regroup+xml,
+          application/vnd.3gpp.mcvideo-regroup+xml,
+          application/vnd.3gpp.seal-mbms-usage-info+xml,
+          application/vnd.3gpp.seal-network-QoS-management-info+xml,
+          application/vnd.3gpp.seal-unicast-info+xml
+  4ba92a9 application/vnd.3gpp.crs+xml
+          application/vnd.3gpp.seal-group-doc+xml
+          application/vnd.3gpp.seal-ue-config-info+xml
+          application/vnd.3gpp.seal-user-profile-info+xml
+          application/vnd.3gpp.v2x
+  1d753a8 application/vnd.acm.addressxfer+json
+  14e0be3 application/vnd.cncf.helm.config.v1+json
+  e6c428d application/prs.implied-document+xml application/prs.implied-executable,
+          application/prs.implied-structure
+  0b3d489 application/vnd.ipfs.ipns-record
+  fdc5886 application/vnd.freelog.comic
+  6c1d4d0 application/vnd.pt.mundusmundi
+  9bd5f5f application/vnd.1ob (ext. ob)
+  02d1311 application/vnd.modl (ext. modl)
+  e1adf8c application/vnd.hsl (ext. hsl)
+  eaa5047 application/vnd.mdl (ext. mdl) and application/vnd.mdl-mbsdf (ext. mbsdf)
+  4241c8b application/vnd.oasis.opendocument.text-master-template (ext. otm)
+  2355b87 application/vnd.smintio.portals.archive (ext. sipa)
+  a4eb940 application/yaml (ext. yaml, yml)
+  f54d570 image/j2c (ext. j2c, J2C, j2k, J2K)
+  0cde41f model/vnd.bary (ext. bary)
+  39ffc3a message/mls
+  30d56ac message/ohttp-req and message/ohttp-res
+
+ -- Charles Plessy <plessy@debian.org>  Thu, 13 Jul 2023 23:00:06 +0900
+
 media-types (10.0.0+pexip24u3) pexip-bookworm; urgency=medium
 
   * New versioning scheme
@@ -18,7 +221,7 @@ media-types (10.0.0pexip1) pexip-bookworm; urgency=medium
 
 media-types (10.0.0) unstable; urgency=medium
 
-  Typse changed:
+  Types changed:
   
   fc1dbd3 Removed `aml` extension in `application/automationml-aml+xml`
           (redundant).  Thanks to Glenn Strauss (Closes: #1031068)

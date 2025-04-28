@@ -10,10 +10,10 @@ sources](http://codesearch.debian.net/search?q=%2Fetc%2Fmime.types+&literal=1).
 Non-maintainer uploads
 ----------------------
 
-In principle, please ask before uploading this package.  If a change is urgent
-or if it is only adding a new IANA-registered type, and you are Debian developer,
-consider a _[team upload](https://wiki.debian.org/TeamUpload)_,
-so that you can follow the semantic versioning scheme described below.
+Debian developers are welcome to make updates that add new IANA-registered
+types, via _[team uploads](https://wiki.debian.org/TeamUpload)_ following the
+semantic versioning scheme described below.  Please make sure to push your
+changes in Salsa.
 
 Semantic versioning
 --------------------
@@ -40,7 +40,7 @@ the _image_ type).
     for file in IANA/*csv; do
       sed 1d $file | cut -f2 -d, | sed '/^$/d' | grep -f - mime.types | cut -f 1 | grep -f - -v $file
     done |
-       grep -ve DEPRECATED -e OBSOLETE -e ,, -e Name,Template,Reference
+       grep -ve DEPRECATED -e OBSOLETE -e ,, -e Name,Template,Reference -e image/vnd.mozilla.apng
 
 To show media types in `mime.types` that are not registered to the IANA:
 
@@ -52,8 +52,12 @@ Removal of duplicated file extensions
 -------------------------------------
 
 Some tools are not able to handle multiple occurrences of a file suffix in
-`/etc/mime.types`.  At the moment I am removing duplicated file extensions.  I
-might revisit that in the future.
+`/etc/mime.types`, especially new duplicates.  A regression test for autopkgtest
+checks that no new duplicate is released unintentionally.  The test contains a
+white list of existing duplicates, which should not be modified without
+discussing with the maintainers or checking for consensus on debian-devel in
+case the mainainers are not available.  The long-term goal is to resolve all
+duplicates.
 
 The following oneliner shows the duplicated file extensions by the times they occur.
 
@@ -62,15 +66,25 @@ The following oneliner shows the duplicated file extensions by the times they oc
 Insert `tr A-Z a-z |` before the `sort` command to search for duplicates
 that differ only by character case.
 
+Some extensions are often declared in various media types because they refer to
+a generic format.  In `mime.types` I assigned them only once:  `bin`
+(`application/octet-stream`), `json` (`application/json`), or `xml`
+(`application/xml`).
+
+### File extensions and their media types scheduled for removal after the Trixie release.
+
+ - `audio/x-gsm` (`gsm`), unofficial, causing duplication with `model/vnd.gdl`.
+ - `application/x-scilab` (`sci`, `sce`) declares `sce`, that belongs to
+   `application/vnd.etsi.asic-e+zip`…
+ - `application/x-maker frm maker frame fm fb book fbdoc`…
+
 ### File extensions for media types listed in two related types
 
  - Script languages such as `sh`, `csh`, `tcl` have been listed for both
    `text/` and `application/` for a long time.  It is not clear what default
    would be best.  In FreeDesktop's _Shared MIME-info_ database, the choice
    differs per language, for instance TCL is `text/tcl` and CSH is
-   `application/x-csh`.  The trend for IANA types seems to privilege `application/`
-   types (for instance for ECMAScript).  But do we want to serve shell scripts
-   as `application/` types ?
+   `application/x-csh`.
 
  - `3gp`, `3gpp`, `3g2` and `3gpp2` are declared in both `audio` and `video` subtypes.
 
@@ -142,6 +156,10 @@ that differ only by character case.
  - `otf` is a file suffix in `application/vnd.oasis.opendocument.formula-template`
     and in `font/` types.
 
+ - `mmd` is declared in `application/vnd.chipnuts.karaoke-mmd` and
+   `application/vnd.mermaid`.  I left it in `application/vnd.chipnuts.karaoke-mmd`
+   (first arrived, first served).
+
  - Removed `x3d` in `application/vnd.hzn-3d-crossword` and left it in
    `model/x3d+xml`
 
@@ -172,9 +190,20 @@ that differ only by character case.
    already used in `application/vnd.palm`.  Since Palm OS is discontinued for more than
    10 years, I gave priority to `model/prc`.
 
+ - `sid` was declared in 2003 in `audio/prs.sid` together with `psid`, and then RFC9595's
+   `application/yang-sid+json`.  I gave priority to the RFC because the other type is
+   related to the old Commodore 64, and has an alternative file extension for it.
+
  - `sig` is listed in `application/rpki-checklist` and `application/pgp-signature`.
    I gave priority to `application/pgp-signature` as it was the first to use
    this extension.
+
+ - `vcf` is declared in `text/vcard` (first arrived, first served) and `text/vnd.vcf`.
+
+ - `vsc` is listed in `application/vnd.vividence.scriptfile` and
+   `application/vnd.vidsoft.vidconference`, which appear to be duplicates of
+   each other.  It was assigned to `vnd.vidsoft.vidconference` when I imported it
+   from Fedora's mailcap package, and I kept it that way.
 
 ### Chemical media types
 
@@ -228,9 +257,12 @@ Other deviations from the IANA
    in Fedora and allows for the removal of `application/x-mif`.
    (<https://help.adobe.com/en_US/framemaker/mifreference/mifref.pdf>)
 
+ - `application/postscript` does not define any file extension, but is given
+   many in `/etc/mime.types`.
+
  - `application/pkix-attr-cert` and `application/vnd.nokia.n-gage.ac+xml`
-    declare `ac`, but the N-Gage service appears to be discontinued, therefore
-    I removed `ac` to `application/vnd.nokia.n-gage.ac+xml`.
+   declare `ac`, but the N-Gage service appears to be discontinued, therefore
+   I removed `ac` to `application/vnd.nokia.n-gage.ac+xml`.
 
  - In the description o `application/vnd.paos.xml` on the IANA website, the
    subtype is said to be `vnd.paos+xml`.  As I do not know where the error
@@ -245,6 +277,9 @@ Other deviations from the IANA
 
  - I removed `image/vnd.mozilla.apng` as it is obsoleted by `image/apng`.
 
+ - The `es` extension is added at the end of IANA's list of extensions for
+   `text/javascript`.  It was originally declared for `text/ecmascript`, but
+   this type is declared obsolete in favour of `text/javascript`.
 
 Media types not registered to the IANA
 --------------------------------------
@@ -298,6 +333,10 @@ Misc. notes
    [`run-mailcap`](https://aur.archlinux.org/packages/run-mailcap/) package
    via Ubuntu.  The page on [Default applications](https://wiki.archlinux.org/index.php/Default_applications)
    on the Arch Wiki is (as usual for this wiki) very informative.
+
+ - <https://github.com/mime-types/mime-types-data> is regularly updated.  It
+   is used in Ruby and we distribute it in the `ruby-mime-types-data`
+   package.
 
  - It might be useful to check [Ubuntu's open issues](https://bugs.launchpad.net/ubuntu/+source/media-types)
    from time to time.

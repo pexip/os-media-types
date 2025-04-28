@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Do not upload a package that changed the white list without discussing with
+# the mainainers or on debian-devel.
+
+whitelist="      2 asn
+      2 aso
+      2 chm
+      2 cif
+      2 cml
+      2 csh
+      2 fm
+      2 frm
+      2 gsm
+      2 mpc
+      2 pdb
+      2 sce
+      2 sdf
+      2 sh
+      2 tcl"
+
+
+dupes=$(grep -v \# /etc/mime.types | awk '{$1=""; print}'| perl -pe 's/(\s)+/\n/g' |  sed '/^$/d' | sort | uniq -c | sort -n | awk '$1 > 1')
+
+diff <( echo "$whitelist" ) <( echo "$dupes" )
+exit $?
+
