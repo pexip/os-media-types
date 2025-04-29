@@ -1,3 +1,9 @@
+media-types (13.0.0+pexip25u1) pexip-trixie; urgency=medium
+
+  * Initial trixie build
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Tue, 29 Apr 2025 22:42:43 +0100
+
 media-types (13.0.0) unstable; urgency=medium
 
   297e5bc Add autopkgtest against new duplicates. Thanks, Tim Andersson
